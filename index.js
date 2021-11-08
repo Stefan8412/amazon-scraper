@@ -5,12 +5,12 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 
-
-
-const generateScraperUrl= (apiKey)=>`http://api.scraperapi.com?api_key=${apiKey}&autoparse=true`
 app.use(express.json());
 
-app.get("/",(req,res)=>{
+const generateScraperUrl= (apiKey)=>`http://api.scraperapi.com?api_key=${apiKey}&autoparse=true`
+
+
+app.get("/",async (req,res)=>{
     res.send("Welcome to Amazon Scraper API.");
 });
 
